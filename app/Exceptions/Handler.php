@@ -53,6 +53,6 @@ class Handler extends ExceptionHandler
     {
         return $request->expectsJson()
             ? response()->json(['message' => $exception->getMessage()], 401)
-            : 'fuck';
+            : response()->json(['status' => 'error', 'message' => 'Invalid Token'], 403);
     }
 }
