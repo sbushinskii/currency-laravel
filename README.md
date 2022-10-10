@@ -1,5 +1,21 @@
+## Task - 1: Compose SQL to grab book-related data based on some criterias
 
-## Laravel API for currencies
+SELECT 
+users.id, 
+concat(users.first_name,' ', users.last_name) as `Name`,  
+GROUP_CONCAT(books.name) as `Books`, 
+books.author as `Author`
+
+FROM users 
+JOIN user_books on user_books.user_id = users.id 
+JOIN books on user_books.book_id = books.id 
+
+WHERE users.age BETWEEN 7 AND 17  
+GROUP by users.id, books.author having COUNT(distinct books.author) = 1 and COUNT(user_books.id) = 2;
+
+
+
+## Task - 2: Laravel API for currencies
 
 ###Steps to start server:
 
@@ -53,7 +69,7 @@ composer install
         value 
 
 ### PAW file
-I've attached the "API Request.paw" file with ready-to use API methods.
+I've attached the "API Request.paw" file in the root project dir with ready-to use API methods.
 
 ![alt text](paw.png)
 
