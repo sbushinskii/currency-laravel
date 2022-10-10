@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\API\RegisterController;
@@ -31,6 +30,5 @@ Route::prefix('v1')->group(function(){
             // currency_from; currency_to; value;
             Route::post('convert', 'convert_rates');
         });
-
     });
 });
