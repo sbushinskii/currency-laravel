@@ -51,3 +51,9 @@ composer install
         currency_to
  
         value 
+
+### PAW file
+I've attached the "API Request.paw" file with ready-to use API methods.
+
+![alt text](paw.png)
+
